@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <form action="/weather" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="city" placeholder="City" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+    <table class="table-transparent">
+        <thead>
+          <tr>
+            <th scope="col">Name of the city</th>
+            <th scope="col">{{ name }}</th>
+            <th scope="col">Weather</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">humidity</th>
+            <th scope="row">{{ humidity }} %</th>
+            <td> &#x1F327;</td>
+          </tr>
+          <tr>
+            <th scope="row">Feels like</th>
+            <td>{{ feels_like }} &deg;</td>
+            <td>&#127777;</td>
+          </tr>
+          <tr>
+            <th scope="row">Temp max</th>
+            <td>{{ temp_max }} &deg;</td>
+            <td>&#9728;</td>
+          </tr>
+          <tr>
+            <th scope="row">Temp min</th>
+            <td>{{ temp_min }} &deg;</td>
+            <td>&#129398;</td>
+          </tr>
+          <tr>
+            <th scope="row">wind</th>
+            <td>{{ speed }} mph</td>
+            <td>&#128168;</td>
+          </tr>
+        </tbody>
+      </table>
+        
+{% endblock %}

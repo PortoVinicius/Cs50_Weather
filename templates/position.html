@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Natural Hazards
+{% endblock %}
+
+{% block main %}
+    <form action="/position" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="city" placeholder="City" type="text">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Search</button>        
+    </form>
+
+    <table class="table-transparent">
+      <thead>
+        <tr>
+            <th scope="col">Coordinates</th>
+            <th scope="col">{{ city }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <th scope="row">Latitude</th>
+            <td>{{ lat }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Longitude</th>
+            <th>{{ lon }}</th>
+        </tr>
+      </tbody>
+    </table>
+
+{% endblock %}
